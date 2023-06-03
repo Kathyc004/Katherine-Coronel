@@ -1,0 +1,26 @@
+from abc import ABC, abstractmethod
+
+class Figura_Geometrica(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+    @abstractmethod
+    def perimetro(self):
+        pass
+
+class Triangulo(Figura_Geometrica):
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+
+    def area(self):
+        return 0.5 * self.base * self.altura
+
+    def perimetro(self):
+        return 3 * self.base
+
+# Crear una instancia de Triangulo
+triangulo = Triangulo(8, 9)
+print("Área del triángulo:", triangulo.area())
+print("Perímetro del triángulo:", triangulo.perimetro())
